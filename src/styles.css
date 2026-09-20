@@ -142,3 +142,87 @@
     color: var(--color-foreground);
   }
 }
+
+/* ============================================================
+   NUMERIA ACADEMY — brand layer (derived from the logo)
+   Deep Numidian green, Massinissa gold, Algerian red accent.
+   ============================================================ */
+:root {
+  --nm-green: oklch(0.30 0.062 158);
+  --nm-green-deep: oklch(0.22 0.048 158);
+  --nm-green-soft: oklch(0.44 0.062 158);
+  --nm-gold: oklch(0.74 0.098 78);
+  --nm-gold-deep: oklch(0.62 0.096 72);
+  --nm-red: oklch(0.53 0.198 25);
+  --nm-ivory: oklch(0.973 0.012 92);
+  --nm-sand: oklch(0.935 0.020 88);
+
+  --background: var(--nm-ivory);
+  --foreground: var(--nm-green-deep);
+  --card: oklch(0.995 0.005 92);
+  --card-foreground: var(--nm-green-deep);
+  --popover: oklch(0.995 0.005 92);
+  --popover-foreground: var(--nm-green-deep);
+  --primary: var(--nm-green);
+  --primary-foreground: var(--nm-ivory);
+  --secondary: var(--nm-sand);
+  --secondary-foreground: var(--nm-green-deep);
+  --muted: var(--nm-sand);
+  --muted-foreground: oklch(0.50 0.028 150);
+  --accent: var(--nm-gold);
+  --accent-foreground: var(--nm-green-deep);
+  --destructive: var(--nm-red);
+  --border: oklch(0.89 0.020 90);
+  --input: oklch(0.89 0.020 90);
+  --ring: var(--nm-gold);
+  --radius: 0.5rem;
+}
+
+@theme inline {
+  --color-gold: var(--nm-gold);
+  --color-gold-deep: var(--nm-gold-deep);
+  --color-green-deep: var(--nm-green-deep);
+  --color-green-soft: var(--nm-green-soft);
+  --color-sand: var(--nm-sand);
+  --color-ivory: var(--nm-ivory);
+  --color-algeria-red: var(--nm-red);
+  --font-display: "Reem Kufi", "Cairo", serif;
+  --font-body: "Cairo", system-ui, sans-serif;
+  --font-latin: "Cormorant Garamond", serif;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--nm-ivory);
+}
+
+.nm-display { font-family: var(--font-display); letter-spacing: 0; }
+.nm-latin { font-family: var(--font-latin); letter-spacing: 0.22em; }
+
+/* Numidian tile pattern derived from the logo's column + star motif */
+.nm-pattern {
+  background-image:
+    linear-gradient(45deg, color-mix(in oklch, var(--nm-gold) 14%, transparent) 25%, transparent 25%),
+    linear-gradient(-45deg, color-mix(in oklch, var(--nm-gold) 14%, transparent) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, color-mix(in oklch, var(--nm-gold) 14%, transparent) 75%),
+    linear-gradient(-45deg, transparent 75%, color-mix(in oklch, var(--nm-gold) 14%, transparent) 75%);
+  background-size: 28px 28px;
+  background-position: 0 0, 0 14px, 14px -14px, -14px 0;
+}
+
+.nm-gold-text {
+  background: linear-gradient(100deg, var(--nm-gold-deep), var(--nm-gold), var(--nm-gold-deep));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.nm-rule {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--nm-gold), transparent);
+}
+
+@keyframes nm-float { 0%,100% { transform: translateY(0) } 50% { transform: translateY(-10px) } }
+.nm-float { animation: nm-float 7s ease-in-out infinite; }
+@keyframes nm-rise { from { opacity: 0; transform: translateY(18px) } to { opacity: 1; transform: none } }
+.nm-rise { animation: nm-rise .8s cubic-bezier(.22,.8,.3,1) both; }
