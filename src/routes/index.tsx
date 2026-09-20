@@ -421,7 +421,7 @@ function Teachers() {
           {TEACHERS.map(([name, subject, meta]) => (
             <article key={name} className="border border-gold/25 bg-card p-8 text-center">
               <div className="mx-auto grid size-16 place-items-center rounded-full bg-green-deep">
-                <span className="nm-display text-xl text-gold">{name.split(" ")[1]?.[0]}</span>
+                <span className="nm-display text-xl text-gold">{String(name).split(" ")[1]?.[0]}</span>
               </div>
               <h3 className="nm-display mt-5 text-xl text-green-deep">{name}</h3>
               <p className="mt-1 text-xs tracking-widest text-gold-deep">{subject}</p>
