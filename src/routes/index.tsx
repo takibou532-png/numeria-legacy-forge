@@ -141,8 +141,8 @@ function Hero() {
 
           <dl className="mt-12 grid max-w-lg grid-cols-3 gap-6 border-t border-ivory/10 pt-8">
             {[
-              ["+12 400", "تلميذ نشط"],
-              ["+320", "درس مسجّل"],
+              ["12400+", "تلميذ نشط"],
+              ["320+", "درس مسجّل"],
               ["94%", "نسبة نجاح"],
             ].map(([v, k]) => (
               <div key={k} className="text-center lg:text-start">
